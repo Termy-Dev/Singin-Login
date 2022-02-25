@@ -1,0 +1,7 @@
+{
+  "name": "ez-1",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
