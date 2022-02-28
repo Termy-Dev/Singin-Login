@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="ionicForm" (ngSubmit)="submitForm()" novalidate>
+    <ion-item lines="full">
+      <ion-label position="floating">Nickname</ion-label>
+      <ion-input formControlName="nickname" type="text" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Phone</ion-label>
+      <ion-input formControlName="phone" type="text" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Password</ion-label>
+      <ion-input formControlName="password" type="password" required></ion-input>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="danger" expand="block">Registrati</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+
+
+  <h1>Login</h1>
+  <form [formGroup]="loginForm" (ngSubmit)="submitForm2()" novalidate>
+    <ion-item lines="full">
+      <ion-label position="floating">Nickname</ion-label>
+      <ion-input formControlName="nickname" type="text" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Password</ion-label>
+      <ion-input formControlName="password" type="password" required></ion-input>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="danger" expand="block">Login</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+
+  <h1>METTI UN FEED</h1>
+  <form [formGroup]="addForm" (ngSubmit)="submitForm3()" novalidate>
+    <ion-item lines="full">
+      <ion-label position="floating">Message</ion-label>
+      <ion-input formControlName="message" type="text" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">ImgUrl</ion-label>
+      <ion-input formControlName="imgUrl" type="url" required></ion-input>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="danger" expand="block">Aggiungi Feed</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

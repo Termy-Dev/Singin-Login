@@ -13,8 +13,31 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)" style="z-index: 999999;">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+<ion-button [routerLink]="['/login']">
+  Registrati
+</ion-button>
+
+  <ion-card *ngFor="let item of feeds">
+    <ion-card-header>
+      <ion-img [src]="item.imageUrl" ></ion-img>
+      <ion-card-title>{{ item.creator.nickname }}</ion-card-title>
+    </ion-card-header>
+   
+    <ion-card-content>
+     {{ item.message }}
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
 </ion-content>
